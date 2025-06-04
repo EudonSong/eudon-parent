@@ -7,6 +7,7 @@
     <modules>
         <module>eudon-commons</module>
         <module>eudon-service</module>
+        <module>eudon-commons/eudon-common-core</module>
     </modules>
     <version>1.0-SNAPSHOT</version>
     <name>eudon-parent</name>

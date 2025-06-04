@@ -12,6 +12,9 @@
 
     <modules>
         <module>eudon-common-boot</module>
+        <module>eudon-common-json</module>
+        <module>eudon-common-datasource</module>
+        <module>eudon-common-framework</module>
     </modules>
     <dependencyManagement>
         <dependencies>
