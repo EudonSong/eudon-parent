@@ -11,6 +11,7 @@
     <name>eudon-commons</name>
 
     <modules>
+        <module>eudon-common-core</module>
         <module>eudon-common-boot</module>
         <module>eudon-common-json</module>
         <module>eudon-common-datasource</module>
