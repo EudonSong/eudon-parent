@@ -1,9 +1,10 @@
 server:
   port: 8080
-  servlet:
-    context-path: /api
+
 spring:
   application:
     name: TemplateApplication
   config:
     import: classpath:eudon-datasource.yml,eudon-framework.yml
+  profiles:
+    active: dev
