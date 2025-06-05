@@ -14,7 +14,7 @@ import java.util.stream.Stream;
  * @repository <a href="https://github.com/EudonSong">GitHub</a>
  * @since 2025/6/4
  */
-public class EnumUtil {
+public class EnumUtil<T extends BaseEnum> {
     /**
      * 根据code获取对应枚举。
      *
