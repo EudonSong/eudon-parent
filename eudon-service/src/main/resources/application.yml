@@ -6,4 +6,4 @@ spring:
   application:
     name: TemplateApplication
   config:
-    import: classpath:application-datasource.yml,application-framework.yml
+    import: classpath:eudon-datasource.yml,eudon-framework.yml

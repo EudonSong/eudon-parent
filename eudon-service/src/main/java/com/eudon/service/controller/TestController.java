@@ -1,9 +1,12 @@
 package com.eudon.service.controller;
 
 
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
+
+import javax.annotation.PostConstruct;
 
 /**
  * @author eudon
@@ -15,8 +18,18 @@ import org.springframework.web.bind.annotation.RestController;
  */
 @RestController
 public class TestController {
+    @Value("${test1.import}")
+    private String test1;
+    @Value("${test2.import}")
+    private String test2;
+    @PostConstruct
+    public void init() {
+        System.out.println(test1);
+        System.out.println(test2);
+    }
     @RequestMapping(method = RequestMethod.GET,path = "/test")
     public String test(){
+
         return "test success";
     }
 }
