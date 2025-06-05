@@ -7,4 +7,4 @@ spring:
   config:
     import: classpath:eudon-datasource.yml,eudon-framework.yml
   profiles:
-    active: dev
+    active: dev #可以在环境变量中添加ACTIVE_PROFILES，然后通过${ACTIVE_PROFILES}来进行动态指定
