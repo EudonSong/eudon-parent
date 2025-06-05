@@ -16,6 +16,16 @@
             <artifactId>eudon-common-boot</artifactId>
             <version>${project.version}</version>
         </dependency>
+        <dependency>
+            <groupId>com.eudon</groupId>
+            <artifactId>eudon-common-datasource</artifactId>
+            <version>${project.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>com.eudon</groupId>
+            <artifactId>eudon-common-framework</artifactId>
+            <version>${project.version}</version>
+        </dependency>
     </dependencies>
 
     <build>
