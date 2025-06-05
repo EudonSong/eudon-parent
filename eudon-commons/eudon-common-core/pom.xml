@@ -17,7 +17,4 @@
             <scope>provided</scope>
         </dependency>
     </dependencies>
-    <build>
-        <finalName>${project.name}-${project.version}</finalName>
-    </build>
 </project>

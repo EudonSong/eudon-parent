@@ -17,7 +17,16 @@
             <version>${project.version}</version>
         </dependency>
     </dependencies>
+
     <build>
-        <finalName>${project.name}-${project.version}</finalName>
+        <plugins>
+            <plugin>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-maven-plugin</artifactId>
+                <configuration>
+                    <mainClass>com.eudon.service.TemplateApplication</mainClass>
+                </configuration>
+            </plugin>
+        </plugins>
     </build>
 </project>

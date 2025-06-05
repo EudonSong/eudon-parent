@@ -22,7 +22,4 @@
             <version>${project.version}</version>
         </dependency>
     </dependencies>
-    <build>
-        <finalName>${project.name}-${project.version}</finalName>
-    </build>
 </project>
