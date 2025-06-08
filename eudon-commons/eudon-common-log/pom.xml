@@ -1,0 +1,45 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <parent>
+        <groupId>com.eudon</groupId>
+        <artifactId>eudon-commons</artifactId>
+        <version>1.0-SNAPSHOT</version>
+    </parent>
+    <artifactId>eudon-common-log</artifactId>
+    <packaging>pom</packaging>
+    <name>eudon-common-log</name>
+    <dependencies>
+        <!--日志框架选择，base依赖无需修改，采用哪一个框架，就将另一个框架的依赖注释掉即可，然后修改对应的日志配置文件-->
+        <!--base log : jul to slf4j-->
+        <dependency>
+            <groupId>org.slf4j</groupId>
+            <artifactId>jul-to-slf4j</artifactId>
+            <version>1.7.36</version>
+            <scope>compile</scope>
+        </dependency>
+        <!--use logback-->
+        <!--<dependency>
+            <groupId>ch.qos.logback</groupId>
+            <artifactId>logback-classic</artifactId>
+            <version>1.2.11</version>
+            <scope>compile</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.logging.log4j</groupId>
+            <artifactId>log4j-to-slf4j</artifactId>
+            <version>2.17.2</version>
+            <scope>compile</scope>
+        </dependency>-->
+
+        <!--use log4j2-->
+        <dependency>
+            <groupId>org.apache.logging.log4j</groupId>
+            <artifactId>log4j-slf4j-impl</artifactId>
+            <version>2.24.1</version>
+        </dependency>
+    </dependencies>
+    <build>
+        <finalName>eudon-common-log</finalName>
+    </build>
+</project>

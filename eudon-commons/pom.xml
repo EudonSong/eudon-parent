@@ -16,6 +16,7 @@
         <module>eudon-common-json</module>
         <module>eudon-common-datasource</module>
         <module>eudon-common-framework</module>
+        <module>eudon-common-log</module>
     </modules>
     <dependencyManagement>
         <dependencies>
