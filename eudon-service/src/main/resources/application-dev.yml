@@ -2,3 +2,8 @@ server:
   port: 8080
   servlet:
     context-path: /dev
+
+
+spring:
+  config:
+    import: classpath:application-datasource-dev.yml,application-framework-dev.yml

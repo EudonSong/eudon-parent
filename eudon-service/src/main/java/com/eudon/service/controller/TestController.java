@@ -8,6 +8,8 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
 import javax.annotation.PostConstruct;
+import javax.annotation.Resource;
+import javax.sql.DataSource;
 
 /**
  * @author eudon
@@ -20,14 +22,9 @@ import javax.annotation.PostConstruct;
 @Slf4j
 @RestController
 public class TestController {
-    @Value("${test1.import}")
-    private String test1;
-    @Value("${test2.import}")
-    private String test2;
     @PostConstruct
     public void init() {
-        log.debug("test1: {}", test1);
-        log.debug("test2: {}", test2);
+
     }
     @RequestMapping(method = RequestMethod.GET,path = "/test")
     public String test(){
