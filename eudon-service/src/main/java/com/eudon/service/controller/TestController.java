@@ -1,6 +1,7 @@
 package com.eudon.service.controller;
 
 
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -16,6 +17,7 @@ import javax.annotation.PostConstruct;
  * @repository <a href="https://github.com/EudonSong">GitHub</a>
  * @since 2025/6/5
  */
+@Slf4j
 @RestController
 public class TestController {
     @Value("${test1.import}")
@@ -24,8 +26,8 @@ public class TestController {
     private String test2;
     @PostConstruct
     public void init() {
-        System.out.println(test1);
-        System.out.println(test2);
+        log.debug("test1: {}", test1);
+        log.debug("test2: {}", test2);
     }
     @RequestMapping(method = RequestMethod.GET,path = "/test")
     public String test(){
