@@ -1,7 +1,11 @@
 package com.eudon.service.controller;
 
 
+import com.eudon.service.TemplateApplication;
+import lombok.Data;
+import lombok.ToString;
 import lombok.extern.slf4j.Slf4j;
+import org.mockito.Mockito;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -24,11 +28,18 @@ import javax.sql.DataSource;
 public class TestController {
     @PostConstruct
     public void init() {
-
+        User mock = Mockito.mock(User.class);
+        log.debug(mock.toString());
     }
     @RequestMapping(method = RequestMethod.GET,path = "/test")
     public String test(){
-
         return "test success";
+    }
+
+    @Data
+    @ToString
+    private static class User {
+        private String name;
+        private int age;
     }
 }

@@ -31,6 +31,7 @@
         <redisson.version>3.17.7</redisson.version>
         <elasticsearch.version>7.12.1</elasticsearch.version>
         <junit.version>3.8.1</junit.version>
+        <mockito-core.version>5.12.0</mockito-core.version>
         <!--TODO 待添加version-->
         <nacos.version>1.0</nacos.version>
         <lombok.version>1.18.24</lombok.version>
