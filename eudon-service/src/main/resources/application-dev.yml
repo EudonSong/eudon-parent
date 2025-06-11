@@ -6,4 +6,4 @@ server:
 
 spring:
   config:
-    import: classpath:application-datasource-dev.yml,application-framework-dev.yml
+    import: classpath:application-datasource-dev.yml,application-framework-dev.yml,application-doc-dev.yml

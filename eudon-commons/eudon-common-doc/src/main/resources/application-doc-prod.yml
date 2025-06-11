@@ -1,0 +1,6 @@
+# 生产环境禁用Swagger
+springdoc:
+  api-docs:
+    enabled: false
+  swagger-ui:
+    enabled: false

@@ -20,6 +20,7 @@
             <groupId>com.eudon</groupId>
             <artifactId>eudon-common-core</artifactId>
             <version>${project.version}</version>
+            <scope>provided</scope>
         </dependency>
     </dependencies>
 </project>

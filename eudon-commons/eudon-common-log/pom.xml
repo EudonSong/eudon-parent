@@ -44,7 +44,4 @@
             <version>2.24.1</version>
         </dependency>-->
     </dependencies>
-    <build>
-        <finalName>eudon-common-log</finalName>
-    </build>
 </project>
