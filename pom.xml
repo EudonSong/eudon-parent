@@ -14,27 +14,27 @@
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
-        <springboot.version>2.7.5</springboot.version>
+        <springboot.version>3.2.0</springboot.version>
         <mysql-connector-java>8.0.31</mysql-connector-java>
-        <mybatis-plus.version>3.5.2</mybatis-plus.version>
-        <fastjson.version>2.0.16</fastjson.version>
-        <druid.version>1.2.14</druid.version>
+        <mybatis-plus.version>3.5.5</mybatis-plus.version>
         <commons-io.version>2.6</commons-io.version>
         <commons-lang3.version>3.12.0</commons-lang3.version>
         <commons-collections4.version>4.4</commons-collections4.version>
         <commons-codec.version>1.13</commons-codec.version>
         <hutool.version>5.8.24</hutool.version>
-        <sharding-jdbc.version>5.1.0</sharding-jdbc.version>
-        <sharding-jdbc-spring-boot-starter.version>4.1.0</sharding-jdbc-spring-boot-starter.version>
-        <spring-boot-starter-amqp.version>2.7.5</spring-boot-starter-amqp.version>
-        <redis.version>2.7.5</redis.version>
-        <redisson.version>3.17.7</redisson.version>
-        <elasticsearch.version>7.12.1</elasticsearch.version>
         <junit.version>3.8.1</junit.version>
         <mockito-core.version>5.12.0</mockito-core.version>
-        <!--TODO 待添加version-->
-        <nacos.version>1.0</nacos.version>
         <lombok.version>1.18.24</lombok.version>
+        <!--TODO 待添加version-->
+        <fastjson.version>2.0.16</fastjson.version>
+        <druid.version>1.2.14</druid.version>
+        <sharding-jdbc.version>5.1.0</sharding-jdbc.version>
+        <sharding-jdbc-spring-boot-starter.version>4.1.0</sharding-jdbc-spring-boot-starter.version>
+        <spring-boot-starter-amqp.version>3.2.0</spring-boot-starter-amqp.version>
+        <redis.version>3.2.0</redis.version>
+        <redisson.version>3.17.7</redisson.version>
+        <elasticsearch.version>7.12.1</elasticsearch.version>
+        <nacos.version>1.0</nacos.version>
     </properties>
 
 
