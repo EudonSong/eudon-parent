@@ -24,12 +24,6 @@
         </dependency>
 
         <dependency>
-            <groupId>com.eudon</groupId>
-            <artifactId>eudon-common-log</artifactId>
-            <version>${project.version}</version>
-        </dependency>
-
-        <dependency>
             <groupId>mysql</groupId>
             <artifactId>mysql-connector-java</artifactId>
         </dependency>
