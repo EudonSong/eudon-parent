@@ -1,6 +1,7 @@
 package com.eudon.common.core.annotation;
 
 
+import org.springframework.core.annotation.AliasFor;
 import org.springframework.stereotype.Component;
 
 import java.lang.annotation.*;
@@ -14,9 +15,10 @@ import java.lang.annotation.*;
  * @since 2025/6/12
  */
 @Retention(RetentionPolicy.RUNTIME)
-@Component(value = "")
+@Component
 @Target({ElementType.TYPE})
 @Inherited
 public @interface Manager {
+    @AliasFor(annotation = Component.class)
     String value() default "";
 }
