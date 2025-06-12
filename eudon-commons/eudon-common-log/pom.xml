@@ -7,7 +7,7 @@
         <version>1.0-SNAPSHOT</version>
     </parent>
     <artifactId>eudon-common-log</artifactId>
-    <packaging>pom</packaging>
+    <packaging>jar</packaging>
     <name>eudon-common-log</name>
     <dependencies>
         <!--日志框架选择，base依赖无需修改，采用哪一个框架，就将另一个框架的依赖注释掉即可，然后修改对应的日志配置文件-->

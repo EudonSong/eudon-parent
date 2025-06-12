@@ -6,3 +6,5 @@ spring:
     name: TemplateApplication
   profiles:
     active: dev #可以在环境变量中添加ACTIVE_PROFILES，然后通过${ACTIVE_PROFILES}来进行动态指定
+mybatis-plus:
+  mapper-locations: classpath*:/mapper/**/*.xml
