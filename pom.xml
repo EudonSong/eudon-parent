@@ -9,6 +9,7 @@
         <module>eudon-service</module>
     </modules>
     <version>1.0-SNAPSHOT</version>
+
     <name>eudon-parent</name>
     <url>https://github.com/EudonSong</url>
     <properties>
