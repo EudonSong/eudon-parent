@@ -10,6 +10,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
+import javax.sql.DataSource;
+
 /**
  * @author eudon
  * @version <p>1.0</p>
@@ -23,8 +25,11 @@ import org.springframework.web.bind.annotation.RestController;
 public class TestController {
     @Resource
     private TestService testService;
+    @Resource
+    private DataSource dataSource;
     @RequestMapping(method = RequestMethod.GET,path = "/test")
     public String test(){
+        System.out.println("当前数据源:"+dataSource.getClass());
         testService.test();
         return "test success";
     }

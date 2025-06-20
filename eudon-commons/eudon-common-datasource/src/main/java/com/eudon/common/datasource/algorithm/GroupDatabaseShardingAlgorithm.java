@@ -43,4 +43,9 @@ public class GroupDatabaseShardingAlgorithm implements StandardShardingAlgorithm
     public void init(Properties props) {
         this.props = props;
     }
-} 
+
+    @Override
+    public Properties getProps() {
+        return null;
+    }
+}

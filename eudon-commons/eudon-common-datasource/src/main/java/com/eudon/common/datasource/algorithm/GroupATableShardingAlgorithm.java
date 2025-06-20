@@ -43,4 +43,9 @@ public class GroupATableShardingAlgorithm implements StandardShardingAlgorithm<S
     public void init(Properties props) {
         this.props = props;
     }
-} 
+
+    @Override
+    public Properties getProps() {
+        return null;
+    }
+}

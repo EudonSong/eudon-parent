@@ -1,24 +1,21 @@
-# 标准 Spring Boot 数据源配置
-#spring:
-#  datasource:
-#    driver-class-name: com.mysql.cj.jdbc.Driver
-#    url: jdbc:mysql://rm-2ze66cjk287xy3e57wo.mysql.rds.aliyuncs.com:3306/test01?useUnicode=true&characterEncoding=UTF-8
-#    username: eudon
-#    password: Eudon061618
-
 # ShardingSphere 5.x 分库分表配置 (优化版)
 spring:
+  datasource:
+    driver-class-name: org.apache.shardingsphere.driver.ShardingSphereDriver
+    url: jdbc:shardingsphere:classpath:sharding.yml
   shardingsphere:
     mode:
       type: Standalone
     datasource:
       names: db0,db1
       db0:
+        type: com.zaxxer.hikari.HikariDataSource
         driver-class-name: com.mysql.cj.jdbc.Driver
         jdbc-url: jdbc:mysql://rm-2ze66cjk287xy3e57wo.mysql.rds.aliyuncs.com:3306/db0?useUnicode=true&characterEncoding=UTF-8
         username: eudon
         password: Eudon061618
       db1:
+        type: com.zaxxer.hikari.HikariDataSource
         driver-class-name: com.mysql.cj.jdbc.Driver
         jdbc-url: jdbc:mysql://rm-2ze66cjk287xy3e57wo.mysql.rds.aliyuncs.com:3306/db1?useUnicode=true&characterEncoding=UTF-8
         username: eudon
@@ -96,7 +93,6 @@ spring:
             props:
               strategy: standard
               algorithmClassName: com.eudon.common.datasource.algorithm.GroupBTableShardingAlgorithm
-    
+  
     props:
       sql-show: true
-      sql-simple: false
