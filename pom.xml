@@ -24,19 +24,16 @@
         <commons-collections4.version>4.4</commons-collections4.version>
         <commons-codec.version>1.13</commons-codec.version>
         <hutool.version>5.8.24</hutool.version>
-        <junit.version>3.8.1</junit.version>
-        <mockito-core.version>5.12.0</mockito-core.version>
+        <junit-jupiter.version>5.10.2</junit-jupiter.version>
+        <mockito.version>5.12.0</mockito.version>
         <lombok.version>1.18.24</lombok.version>
-        <!--TODO 待添加version-->
         <fastjson.version>2.0.16</fastjson.version>
         <druid.version>1.2.14</druid.version>
-        <sharding-jdbc.version>5.1.0</sharding-jdbc.version>
-        <sharding-jdbc-spring-boot-starter.version>4.1.0</sharding-jdbc-spring-boot-starter.version>
-        <spring-boot-starter-amqp.version>3.2.0</spring-boot-starter-amqp.version>
-        <redis.version>3.2.0</redis.version>
+        <shardingsphere.version>5.2.1</shardingsphere.version>
         <redisson.version>3.17.7</redisson.version>
         <elasticsearch.version>7.12.1</elasticsearch.version>
         <nacos.version>1.0</nacos.version>
+        <janino.version>3.1.12</janino.version>
     </properties>
 
     <dependencyManagement>
@@ -55,10 +52,20 @@
                 <artifactId>lombok</artifactId>
                 <version>${lombok.version}</version>
             </dependency>
+
+            <!-- Junit 5 -->
             <dependency>
-                <groupId>junit</groupId>
-                <artifactId>junit</artifactId>
-                <version>${junit.version}</version>
+                <groupId>org.junit</groupId>
+                <artifactId>junit-bom</artifactId>
+                <version>${junit-jupiter.version}</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+
+            <dependency>
+                <groupId>org.mockito</groupId>
+                <artifactId>mockito-core</artifactId>
+                <version>${mockito.version}</version>
             </dependency>
 
             <dependency>
@@ -103,7 +110,10 @@
                 </exclusions>
             </dependency>
 
-            <!--elasticsearch-->
+            <!--
+            重要提示: elasticsearch-rest-high-level-client 已被官方弃用.
+            推荐迁移到新的 'co.elastic.clients:elasticsearch-java' 客户端.
+            -->
             <dependency>
                 <groupId>org.elasticsearch.client</groupId>
                 <artifactId>elasticsearch-rest-high-level-client</artifactId>
@@ -116,17 +126,11 @@
                 </exclusions>
             </dependency>
 
-            <!--sharding-jdbc-->
+            <!-- ShardingSphere for Spring Boot 3.x -->
             <dependency>
                 <groupId>org.apache.shardingsphere</groupId>
-                <artifactId>sharding-jdbc-spring-boot-starter</artifactId>
-                <version>${sharding-jdbc-spring-boot-starter.version}</version>
-                <exclusions>
-                    <exclusion>
-                        <groupId>org.springframework.boot</groupId>
-                        <artifactId>spring-boot-starter</artifactId>
-                    </exclusion>
-                </exclusions>
+                <artifactId>shardingsphere-jdbc-core-spring-boot-starter</artifactId>
+                <version>${shardingsphere.version}</version>
             </dependency>
 
             <dependency>
@@ -170,11 +174,10 @@
                 <artifactId>hutool-all</artifactId>
                 <version>${hutool.version}</version>
             </dependency>
-
             <dependency>
-                <groupId>org.mockito</groupId>
-                <artifactId>mockito-core</artifactId>
-                <version>${mockito-core.version}</version>
+                <groupId>org.codehaus.janino</groupId>
+                <artifactId>janino</artifactId>
+                <version>${janino.version}</version>
             </dependency>
         </dependencies>
     </dependencyManagement>

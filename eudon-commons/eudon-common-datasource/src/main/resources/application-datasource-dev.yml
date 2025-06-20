@@ -1,6 +1,23 @@
+# 标准 Spring Boot 数据源配置
 spring:
   datasource:
     driver-class-name: com.mysql.cj.jdbc.Driver
     url: jdbc:mysql://rm-2ze66cjk287xy3e57wo.mysql.rds.aliyuncs.com:3306/test01?useUnicode=true&characterEncoding=UTF-8
     username: eudon
     password: Eudon061618
+
+# ShardingSphere 5.x 配置 (暂时注释，等需要分库分表时再启用)
+# spring:
+#   shardingsphere:
+#     mode:
+#       type: Memory
+#     datasource:
+#       names: ds0
+#       ds0:
+#         type: com.zaxxer.hikari.HikariDataSource
+#         driver-class-name: com.mysql.cj.jdbc.Driver
+#         jdbc-url: jdbc:mysql://rm-2ze66cjk287xy3e57wo.mysql.rds.aliyuncs.com:3306/test01?useUnicode=true&characterEncoding=UTF-8
+#         username: eudon
+#         password: Eudon061618
+#     props:
+#       sql-show: true

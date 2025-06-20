@@ -10,43 +10,26 @@
     <packaging>jar</packaging>
     <name>eudon-common-starter</name>
     <dependencies>
-        <!--启动总依赖-->
-        <dependency>
-            <groupId>com.eudon</groupId>
-            <artifactId>eudon-common-boot</artifactId>
-            <version>${project.version}</version>
-        </dependency>
-        <!--核心包-->
-        <dependency>
-            <groupId>com.eudon</groupId>
-            <artifactId>eudon-common-core</artifactId>
-            <version>${project.version}</version>
-        </dependency>
-        <!--数据源包-->
-        <dependency>
-            <groupId>com.eudon</groupId>
-            <artifactId>eudon-common-datasource</artifactId>
-            <version>${project.version}</version>
-        </dependency>
-        <!--Swagger包-->
-        <dependency>
-            <groupId>com.eudon</groupId>
-            <artifactId>eudon-common-doc</artifactId>
-            <version>${project.version}</version>
-        </dependency>
-        <!--启动框架包-->
         <dependency>
             <groupId>com.eudon</groupId>
             <artifactId>eudon-common-framework</artifactId>
             <version>${project.version}</version>
         </dependency>
-        <!--JSON包-->
+        <dependency>
+            <groupId>com.eudon</groupId>
+            <artifactId>eudon-common-datasource</artifactId>
+            <version>${project.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>com.eudon</groupId>
+            <artifactId>eudon-common-doc</artifactId>
+            <version>${project.version}</version>
+        </dependency>
         <dependency>
             <groupId>com.eudon</groupId>
             <artifactId>eudon-common-json</artifactId>
             <version>${project.version}</version>
         </dependency>
-        <!--日志框架包-->
         <dependency>
             <groupId>com.eudon</groupId>
             <artifactId>eudon-common-log</artifactId>

@@ -2,12 +2,10 @@ package com.eudon.service.controller;
 
 
 import com.eudon.service.service.TestService;
-import jakarta.annotation.PostConstruct;
 import jakarta.annotation.Resource;
 import lombok.Data;
 import lombok.ToString;
 import lombok.extern.slf4j.Slf4j;
-import org.mockito.Mockito;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
@@ -25,11 +23,6 @@ import org.springframework.web.bind.annotation.RestController;
 public class TestController {
     @Resource
     private TestService testService;
-    @PostConstruct
-    public void init() {
-        User mock = Mockito.mock(User.class);
-        log.debug(mock.toString());
-    }
     @RequestMapping(method = RequestMethod.GET,path = "/test")
     public String test(){
         testService.test();

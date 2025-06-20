@@ -16,6 +16,13 @@
             <artifactId>eudon-common-starter</artifactId>
             <version>${project.version}</version>
         </dependency>
+
+        <!-- Spring Boot Test Starter, includes Mockito, JUnit 5, etc. -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-test</artifactId>
+            <scope>test</scope>
+        </dependency>
     </dependencies>
 
     <build>

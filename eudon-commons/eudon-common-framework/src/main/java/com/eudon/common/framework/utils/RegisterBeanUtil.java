@@ -1,4 +1,4 @@
-package com.eudon.common.core.utils;
+package com.eudon.common.framework.utils;
 
 import org.springframework.beans.BeansException;
 import org.springframework.beans.factory.support.AbstractBeanDefinition;

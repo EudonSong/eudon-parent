@@ -20,13 +20,22 @@ import java.io.IOException;
  * @since 2025/6/5
  */
 public class SensitiveSerializer extends JsonSerializer<String> implements ContextualSerializer {
-    //脱敏注解
-    private Sensitive sensitive;
+
+    private Sensitive.Type type;
+    private String rule;
+
+    public SensitiveSerializer() {
+    }
+
+    public SensitiveSerializer(final Sensitive sensitive) {
+        this.type = sensitive.type();
+        this.rule = sensitive.type().getRule().toString();
+    }
 
     @Override
-    public void serialize(String source, JsonGenerator jsonGenerator, SerializerProvider serializerProvider) throws IOException {
-        if (StringUtils.isNoneBlank(source)) {
-            String encrypt = sensitive.type().getRule().apply(source);
+    public void serialize(final String source, final JsonGenerator jsonGenerator, final SerializerProvider serializerProvider) throws IOException {
+        if (StringUtils.isNoneBlank(source) && type != null) {
+            String encrypt = type.getRule().apply(source);
             jsonGenerator.writeString(encrypt);
             return;
         }
@@ -37,13 +46,12 @@ public class SensitiveSerializer extends JsonSerializer<String> implements Conte
      * 回调函数获得正确的序列化器
      */
     @Override
-    public JsonSerializer<?> createContextual(SerializerProvider serializerProvider, BeanProperty beanProperty) throws JsonMappingException {
+    public JsonSerializer<?> createContextual(final SerializerProvider serializerProvider, final BeanProperty beanProperty) throws JsonMappingException {
         if (beanProperty != null) {
             if (String.class.equals(beanProperty.getType().getRawClass())) {
                 Sensitive sensitive = beanProperty.getAnnotation(Sensitive.class);
                 if (sensitive != null) {
-                    this.sensitive = sensitive;
-                    return this;
+                    return new SensitiveSerializer(sensitive);
                 }
             }
             return serializerProvider.findValueSerializer(beanProperty.getType(), beanProperty);

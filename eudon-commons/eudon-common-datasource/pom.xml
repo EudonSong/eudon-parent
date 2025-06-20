@@ -12,9 +12,27 @@
     <dependencies>
         <dependency>
             <groupId>com.eudon</groupId>
-            <artifactId>eudon-common-boot</artifactId>
+            <artifactId>eudon-common-core</artifactId>
             <version>${project.version}</version>
-            <scope>provided</scope>
         </dependency>
+        <dependency>
+            <groupId>com.baomidou</groupId>
+            <artifactId>mybatis-plus-spring-boot3-starter</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>com.alibaba</groupId>
+            <artifactId>druid</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>mysql</groupId>
+            <artifactId>mysql-connector-java</artifactId>
+        </dependency>
+        <!-- ShardingSphere 依赖 (暂时注释，等需要分库分表时再启用) -->
+        <!--
+        <dependency>
+            <groupId>org.apache.shardingsphere</groupId>
+            <artifactId>shardingsphere-jdbc-core-spring-boot-starter</artifactId>
+        </dependency>
+        -->
     </dependencies>
 </project>

@@ -2,7 +2,7 @@ package com.eudon.service.manager;
 
 
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
-import com.eudon.common.core.annotation.Manager;
+import com.eudon.common.framework.annotation.Manager;
 import com.eudon.service.dao.TbUserMapper;
 import com.eudon.service.domain.entity.TbUserEntity;
 import lombok.extern.slf4j.Slf4j;
