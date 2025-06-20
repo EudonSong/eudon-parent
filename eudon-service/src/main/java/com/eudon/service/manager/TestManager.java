@@ -27,7 +27,7 @@ public class TestManager {
 
     public void test() {
         TbUserEntity tbUserEntity = new TbUserEntity();
-        tbUserEntity.setZoneValue(122L);
+        tbUserEntity.setUserId("121323");
         QueryWrapper<TbUserEntity> wrapper = new QueryWrapper<>();
         wrapper.setEntity(tbUserEntity);
         TbUserEntity one = tbUserMapper.selectOne(wrapper);

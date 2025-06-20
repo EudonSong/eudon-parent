@@ -7,9 +7,8 @@
     <resultMap id="BaseResultMap" type="com.eudon.service.domain.entity.TbUserEntity">
             <id property="userId" column="user_id" />
             <result property="userName" column="user_name" />
-            <result property="userAge" column="user_age" />
-            <result property="userGender" column="user_gender" />
-            <result property="zoneValue" column="zone_value" />
+            <result property="gender" column="gender" />
+            <result property="zoneVal" column="zone_val" />
     </resultMap>
 
     <sql id="Base_Column_List">

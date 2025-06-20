@@ -29,11 +29,12 @@
         <lombok.version>1.18.24</lombok.version>
         <fastjson.version>2.0.16</fastjson.version>
         <druid.version>1.2.14</druid.version>
-        <shardingsphere.version>5.2.1</shardingsphere.version>
+        <shardingsphere.version>5.5.1</shardingsphere.version>
         <redisson.version>3.17.7</redisson.version>
         <elasticsearch.version>7.12.1</elasticsearch.version>
         <nacos.version>1.0</nacos.version>
         <janino.version>3.1.12</janino.version>
+        <jackson.version>2.15.2</jackson.version>
     </properties>
 
     <dependencyManagement>
@@ -129,7 +130,7 @@
             <!-- ShardingSphere for Spring Boot 3.x -->
             <dependency>
                 <groupId>org.apache.shardingsphere</groupId>
-                <artifactId>shardingsphere-jdbc-core-spring-boot-starter</artifactId>
+                <artifactId>shardingsphere-jdbc</artifactId>
                 <version>${shardingsphere.version}</version>
             </dependency>
 
@@ -181,6 +182,15 @@
             </dependency>
         </dependencies>
     </dependencyManagement>
+
+    <dependencies>
+        <!-- 移除为了兼容旧版 ShardingSphere 而添加的 snakeyaml 依赖 -->
+        <!-- <dependency> -->
+        <!-- <groupId>org.yaml</groupId> -->
+        <!-- <artifactId>snakeyaml</artifactId> -->
+        <!-- <version>1.33</version> -->
+        <!-- </dependency> -->
+    </dependencies>
 
     <build>
         <finalName>${project.name}-${project.version}</finalName>

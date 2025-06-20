@@ -79,7 +79,7 @@ JSON 处理组件，包含：
 #### eudon-common-datasource
 数据源配置模块，支持：
 - 多数据源配置
-- 分库分表配置
+- 分库分表（ShardingSphere-JDBC，shardingsphere-jdbc主依赖，适配Spring Boot 3.x）
 - 数据库连接池管理
 
 #### eudon-common-doc
@@ -244,6 +244,9 @@ public enum Gender implements BaseEnum {
 - Sharding-JDBC 集成
 - 支持水平分片
 - 灵活的分片策略
+- ShardingSphere-JDBC 集成（shardingsphere-jdbc主依赖，适配Spring Boot 3.x）
+- 支持水平分片
+- 灵活的分片策略
 
 ### 5. 消息队列
 - RabbitMQ 集成
@@ -310,4 +313,5 @@ java -jar eudon-service/target/eudon-service-1.0-SNAPSHOT.jar
 - 初始版本发布
 - 基础框架搭建
 - 核心功能实现
-- 示例代码完善 
+- 示例代码完善
+- 分库分表依赖升级为shardingsphere-jdbc，适配Spring Boot 3.x 

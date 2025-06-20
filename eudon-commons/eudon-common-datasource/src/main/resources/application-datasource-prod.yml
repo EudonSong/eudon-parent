@@ -1,15 +1,78 @@
-# ShardingSphere 5.x 配置
+# ShardingSphere 5.x 分库分表配置 (优化版)
 spring:
   shardingsphere:
     mode:
-      type: Memory
+      type: Standalone    # 模式类型为单机模式
+      repository:
+        type: Memory
     datasource:
-      names: ds0
+      names: db0,db1
       ds0:
         type: com.zaxxer.hikari.HikariDataSource
         driver-class-name: com.mysql.cj.jdbc.Driver
-        jdbc-url: jdbc:mysql://rm-2ze66cjk287xy3e57wo.mysql.rds.aliyuncs.com:3306/db1?useUnicode=true&characterEncoding=UTF-8
+        jdbc-url: jdbc:mysql://rm-2ze66cjk287xy3e57wo.mysql.rds.aliyuncs.com:3306/?useUnicode=true&characterEncoding=UTF-8
         username: eudon
         password: Eudon061618
+      ds1:
+        type: com.zaxxer.hikari.HikariDataSource
+        driver-class-name: com.mysql.cj.jdbc.Driver
+        jdbc-url: jdbc:mysql://rm-2ze66cjk287xy3e57wo.mysql.rds.aliyuncs.com:3306/?useUnicode=true&characterEncoding=UTF-8
+        username: eudon
+        password: Eudon061618
+    rules:
+      sharding:
+        binding-tables:
+          - tb_user,tb_user_info
+#          - table_3,table_4,table_5,table_6,table_7,table_8,table_9,tb_user0
+
+        auto-tables:
+          group_a:
+            actual-data-sources: db0,db1
+            sharding-strategy:
+              standard:
+                sharding-column: user_id
+                sharding-algorithm-name: group-a-db-sharding
+            table-strategy:
+              standard:
+                sharding-column: user_id
+                sharding-algorithm-name: group-a-table-sharding
+            actual-data-nodes: ds${0..1}.${['tb_user', 'tb_user_info']}_${'0001'..'0004'}
+          
+          group_b:
+            actual-data-sources: db0,db1
+            sharding-strategy:
+              standard:
+                sharding-column: zone_val
+                sharding-algorithm-name: group-b-db-sharding
+            table-strategy:
+              standard:
+                sharding-column: zone_val
+                sharding-algorithm-name: group-b-table-sharding
+            actual-data-nodes: ds${0..1}.${['table_cont','table_fix','table_curt','table_curt_acc','table_fix_acc','table_curt_cont','table_fix_cont','table_custome']}_${'0001'..'0004'}
+
+        sharding-algorithms:
+          group-a-db-sharding:
+            type: CLASS_BASED
+            props:
+              strategy: standard
+              algorithmClassName: com.eudon.common.datasource.algorithm.GroupDatabaseShardingAlgorithm
+          group-a-table-sharding:
+            type: CLASS_BASED
+            props:
+              strategy: standard
+              algorithmClassName: com.eudon.common.datasource.algorithm.GroupATableShardingAlgorithm
+          
+          group-b-db-sharding:
+            type: CLASS_BASED
+            props:
+              strategy: standard
+              algorithmClassName: com.eudon.common.datasource.algorithm.GroupDatabaseShardingAlgorithm
+          group-b-table-sharding:
+            type: CLASS_BASED
+            props:
+              strategy: standard
+              algorithmClassName: com.eudon.common.datasource.algorithm.GroupBTableShardingAlgorithm
+    
     props:
       sql-show: false
+      sql-simple: true

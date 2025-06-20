@@ -21,8 +21,8 @@
         <!-- Spring Boot 核心 -->
         <dependency>
             <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter</artifactId>
-            <scope>provided</scope>
+            <artifactId>spring-boot-starter-web</artifactId>
+
         </dependency>
         <!--mock工具包-->
         <dependency>
