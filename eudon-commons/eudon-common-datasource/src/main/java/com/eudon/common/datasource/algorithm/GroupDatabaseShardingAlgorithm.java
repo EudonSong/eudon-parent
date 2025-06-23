@@ -27,11 +27,21 @@ public class GroupDatabaseShardingAlgorithm implements StandardShardingAlgorithm
             return availableTargetNames.iterator().next();
         }
         
-        // 使用哈希算法进行数据库分片
+        // 使用哈希算法进行数据库分片，计算数据库索引 (0-1)
         int hash = Math.abs(value.hashCode());
-        int index = hash % availableTargetNames.size();
+        int dbIndex = hash % 2; // 生成 0-1 的数据库索引
         
-        return availableTargetNames.toArray(new String[0])[index];
+        // 从可用目标名称中找到对应的数据库
+        String dbSuffix = String.valueOf(dbIndex); // 0, 1
+        
+        for (String targetName : availableTargetNames) {
+            if (targetName.endsWith("db" + dbSuffix)) {
+                return targetName;
+            }
+        }
+        
+        // 如果没找到，返回第一个可用目标
+        return availableTargetNames.iterator().next();
     }
 
     @Override
@@ -39,6 +49,7 @@ public class GroupDatabaseShardingAlgorithm implements StandardShardingAlgorithm
         // 范围查询时返回所有可用数据库
         return availableTargetNames;
     }
+    
     @Override
     public void init(Properties props) {
         this.props = props;
@@ -46,6 +57,6 @@ public class GroupDatabaseShardingAlgorithm implements StandardShardingAlgorithm
 
     @Override
     public Properties getProps() {
-        return null;
+        return this.props;
     }
 }
