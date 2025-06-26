@@ -12,15 +12,21 @@
     <dependencies>
         <dependency>
             <groupId>com.eudon</groupId>
-            <artifactId>eudon-common-boot</artifactId>
+            <artifactId>eudon-common-core</artifactId>
             <version>${project.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>com.alibaba</groupId>
+            <artifactId>fastjson</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
             <scope>provided</scope>
         </dependency>
         <dependency>
-            <groupId>com.eudon</groupId>
-            <artifactId>eudon-common-core</artifactId>
-            <version>${project.version}</version>
-            <scope>provided</scope>
+            <groupId>com.fasterxml.jackson.core</groupId>
+            <artifactId>jackson-databind</artifactId>
         </dependency>
     </dependencies>
 </project>

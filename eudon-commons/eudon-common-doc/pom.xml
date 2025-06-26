@@ -12,9 +12,12 @@
     <dependencies>
         <dependency>
             <groupId>com.eudon</groupId>
-            <artifactId>eudon-common-boot</artifactId>
+            <artifactId>eudon-common-core</artifactId>
             <version>${project.version}</version>
-            <scope>provided</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.springdoc</groupId>
+            <artifactId>springdoc-openapi-starter-webmvc-ui</artifactId>
         </dependency>
     </dependencies>
 </project>

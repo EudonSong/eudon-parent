@@ -1,9 +1,17 @@
 package com.eudon.service;
 
+import jakarta.annotation.PostConstruct;
+import jakarta.annotation.Resource;
 import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.ComponentScan;
+import org.springframework.context.annotation.Bean;
+import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.context.annotation.Primary;
+
+import javax.sql.DataSource;
+import org.apache.shardingsphere.driver.jdbc.core.datasource.ShardingSphereDataSource;
 
 /**
  * @author eudon
@@ -20,5 +28,11 @@ import org.springframework.context.annotation.ComponentScan;
 public class TemplateApplication {
     public static void main(String[] args) {
         SpringApplication.run(TemplateApplication.class, args);
+    }
+
+
+    @PostConstruct
+    public void printDataSource() {
+        //        System.out.println("当前数据源类型: " + dataSource.getClass());
     }
 }

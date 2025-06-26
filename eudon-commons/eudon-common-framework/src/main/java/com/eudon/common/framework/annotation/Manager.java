@@ -1,4 +1,4 @@
-package com.eudon.common.core.annotation;
+package com.eudon.common.framework.annotation;
 
 
 import org.springframework.core.annotation.AliasFor;
