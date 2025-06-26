@@ -27,10 +27,10 @@ public class TestManager {
 
     public void test() {
         TbUserEntity tbUserEntity = new TbUserEntity();
-        tbUserEntity.setZoneValue(122L);
+        tbUserEntity.setZoneVal(122L);
         QueryWrapper<TbUserEntity> wrapper = new QueryWrapper<>();
         wrapper.setEntity(tbUserEntity);
         TbUserEntity one = tbUserMapper.selectOne(wrapper);
-        log.debug(one.toString());
+        log.debug("查询结果：{}",one);
     }
 }

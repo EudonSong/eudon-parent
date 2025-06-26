@@ -1,6 +1,6 @@
 spring:
   datasource:
     driver-class-name: com.mysql.cj.jdbc.Driver
-    url: jdbc:mysql://rm-2ze66cjk287xy3e57wo.mysql.rds.aliyuncs.com:3306/test01?useUnicode=true&characterEncoding=UTF-8
+    url: jdbc:mysql://rm-2ze66cjk287xy3e57wo.mysql.rds.aliyuncs.com:3306/db0?useUnicode=true&characterEncoding=UTF-8
     username: eudon
     password: Eudon061618

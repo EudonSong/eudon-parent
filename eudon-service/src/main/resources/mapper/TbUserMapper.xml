@@ -7,13 +7,12 @@
     <resultMap id="BaseResultMap" type="com.eudon.service.domain.entity.TbUserEntity">
             <id property="userId" column="user_id" />
             <result property="userName" column="user_name" />
-            <result property="userAge" column="user_age" />
-            <result property="userGender" column="user_gender" />
-            <result property="zoneValue" column="zone_value" />
+            <result property="gender" column="gender" />
+            <result property="zoneVal" column="zone_val" />
     </resultMap>
 
     <sql id="Base_Column_List">
-        user_id,user_name,user_age,user_gender,zone_value
+        user_id,user_name,gender,zone_val
     </sql>
 
     <select id="selectByPrimaryKey" parameterType="java.lang.Long" resultMap="BaseResultMap">
@@ -29,51 +28,7 @@
     </delete>
     <insert id="insert" keyColumn="user_id" keyProperty="userId" parameterType="com.eudon.service.domain.entity.TbUserEntity" useGeneratedKeys="true">
         insert into tb_user
-        ( user_id,user_name,user_age,user_gender,zone_value)
-        values (#{userId},#{userName},#{userAge},#{userGender},#{zoneValue})
+        ( user_id,user_name,ugender,zone_val)
+        values (#{userId},#{userName},#{gender},#{zoneVal})
     </insert>
-    <insert id="insertSelective" keyColumn="user_id" keyProperty="userId" parameterType="com.eudon.service.domain.entity.TbUserEntity" useGeneratedKeys="true">
-        insert into tb_user
-        <trim prefix="(" suffix=")" suffixOverrides=",">
-                <if test="userId != null">user_id,</if>
-                <if test="userName != null">user_name,</if>
-                <if test="userAge != null">user_age,</if>
-                <if test="userGender != null">user_gender,</if>
-                <if test="zoneValue != null">zone_value,</if>
-        </trim>
-        <trim prefix="values (" suffix=")" suffixOverrides=",">
-                <if test="userId != null">#{userId},</if>
-                <if test="userName != null">#{userName},</if>
-                <if test="userAge != null">#{userAge},</if>
-                <if test="userGender != null">#{userGender},</if>
-                <if test="zoneValue != null">#{zoneValue},</if>
-        </trim>
-    </insert>
-    <update id="updateByPrimaryKeySelective" parameterType="com.eudon.service.domain.entity.TbUserEntity">
-        update tb_user
-        <set>
-                <if test="userName != null">
-                    user_name = #{userName},
-                </if>
-                <if test="userAge != null">
-                    user_age = #{userAge},
-                </if>
-                <if test="userGender != null">
-                    user_gender = #{userGender},
-                </if>
-                <if test="zoneValue != null">
-                    zone_value = #{zoneValue},
-                </if>
-        </set>
-        where   user_id = #{userId} 
-    </update>
-    <update id="updateByPrimaryKey" parameterType="com.eudon.service.domain.entity.TbUserEntity">
-        update tb_user
-        set 
-            user_name =  #{userName},
-            user_age =  #{userAge},
-            user_gender =  #{userGender},
-            zone_value =  #{zoneValue}
-        where   user_id = #{userId} 
-    </update>
 </mapper>
