@@ -1,4 +1,6 @@
 spring:
+  main:
+    allow-bean-definition-overriding: false
   cloud:
     zookeeper:
       connect-string: 47.95.203.22:2181
@@ -11,7 +13,25 @@ spring:
       enabled: true
       config:
         enabled: false
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health,metrics,prometheus
+  endpoint:
+    health:
+      enabled: true
+      show-details: always
+    beans:
+      enabled: true
+
+  metrics:
+    export:
+      prometheus:
+        enabled: true
+
 logging:
   level:
     org.apache.zookeeper: info
     org.apache.curator: info
+    com.eudon.common.zookeeper.monitor: debug
