@@ -17,7 +17,7 @@
         </dependency>
         <dependency>
             <groupId>org.springframework.cloud</groupId>
-            <artifactId>spring-cloud-starter-zookeeper</artifactId>
+            <artifactId>spring-cloud-starter-zookeeper-all</artifactId>
         </dependency>
 
         <!-- Curator Framework -->
