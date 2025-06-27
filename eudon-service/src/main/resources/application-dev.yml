@@ -1,9 +1,10 @@
 server:
-  port: 8080
+  port: 8081
   servlet:
     context-path: /dev
 
 
 spring:
   config:
-    import: classpath:application-datasource-dev.yml,application-framework-dev.yml,application-doc-dev.yml
+    import: classpath:application-datasource-dev.yml,application-framework-dev.yml,application-doc-dev.yml,application-zookeeper-dev.yml
+

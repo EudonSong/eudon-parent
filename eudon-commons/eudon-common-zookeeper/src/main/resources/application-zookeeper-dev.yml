@@ -1,0 +1,17 @@
+spring:
+  cloud:
+    zookeeper:
+      connect-string: 47.95.203.22:2181
+      session-timeout: 30000
+      connection-timeout: 3000
+      retry:
+        max-retries: 5
+        initial-interval: 1000
+        max-interval: 5000
+      enabled: true
+      config:
+        enabled: false
+logging:
+  level:
+    org.apache.zookeeper: info
+    org.apache.curator: info
