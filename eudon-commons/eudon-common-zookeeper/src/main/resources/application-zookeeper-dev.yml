@@ -3,7 +3,7 @@ spring:
     allow-bean-definition-overriding: false
   cloud:
     zookeeper:
-      connect-string: 47.95.203.22:2181
+      connect-string: 47.95.203.22:2181,47.95.203.22:2182,47.95.203.22:2183
       session-timeout: 30000
       connection-timeout: 3000
       retry:
@@ -35,3 +35,46 @@ logging:
     org.apache.zookeeper: info
     org.apache.curator: info
     com.eudon.common.zookeeper.monitor: debug
+
+
+## 节点1
+#  docker run -d \
+#  --name zk1 \
+#  --hostname zk1 \
+#  --network eudon \
+#  -p 2181:2181 \
+#  -p 2888:2888 \
+#  -p 3888:3888 \
+#  -v /zk1/data:/data \
+#  -v /zk1/datalog:/datalog \
+#  -e ZOO_MY_ID=1 \
+#  -e ZOO_SERVERS="server.1=0.0.0.0:2888:3888;2181 server.2=zk2:2888:3888;2181 server.3=zk3:2888:3888;2181" \
+#  zookeeper
+#
+#  # 节点2
+#  docker run -d \
+#  --name zk2 \
+#  --hostname zk2 \
+#  --network eudon \
+#  -p 2182:2181 \
+#  -p 2889:2888 \
+#  -p 3889:3888 \
+#  -v /zk2/data:/data \
+#  -v /zk2/datalog:/datalog \
+#  -e ZOO_MY_ID=2 \
+#  -e ZOO_SERVERS="server.1=zk1:2888:3888;2181 server.2=0.0.0.0:2888:3888;2181 server.3=zk3:2888:3888;2181" \
+#  zookeeper
+#
+#  # 节点3
+#  docker run -d \
+#  --name zk3 \
+#  --hostname zk3 \
+#  --network eudon \
+#  -p 2183:2181 \
+#  -p 2890:2888 \
+#  -p 3890:3888 \
+#  -v /zk3/data:/data \
+#  -v /zk3/datalog:/datalog \
+#  -e ZOO_MY_ID=3 \
+#  -e ZOO_SERVERS="server.1=zk1:2888:3888;2181 server.2=zk2:2888:3888;2181 server.3=0.0.0.0:2888:3888;2181" \
+#  zookeeper
