@@ -16,7 +16,8 @@ eudon-parent/
 │   ├── eudon-common-framework/  # 框架配置
 │   ├── eudon-common-log/        # 日志组件
 │   ├── eudon-common-doc/        # API 文档配置
-│   └── eudon-common-starter/    # 自动配置启动器
+│   ├── eudon-common-starter/    # 自动配置启动器
+│   └── eudon-common-zookeeper/  # Zookeeper集成
 └── eudon-service/          # 业务服务模块
     ├── controller/         # 控制器层
     ├── service/           # 服务层
@@ -42,7 +43,8 @@ eudon-parent/
 ### 中间件
 - **RabbitMQ**: Spring Boot AMQP 3.2.0
 - **Elasticsearch**: 7.12.1
-- **Sharding-JDBC**: 5.1.0 (分库分表)
+- **Sharding-JDBC**: 5.5.1 (分库分表)
+- **Zookeeper**: 3.8.0 (分布式协调服务)
 
 ### 工具库
 - **Hutool**: 5.8.24 (Java 工具类库)
@@ -102,6 +104,12 @@ API 文档配置模块：
 自动配置启动器：
 - 统一依赖管理
 - 自动配置加载
+
+#### eudon-common-zookeeper
+Zookeeper集成模块，包含：
+- **分布式锁**: `ZkLock` 接口和 `DefaultZkLockImpl` 实现
+- **监控指标**: `ZookeeperMetrics` 监控类
+- **配置管理**: 支持Zookeeper配置中心集成
 
 ### eudon-service (业务服务模块)
 
@@ -253,6 +261,11 @@ public enum Gender implements BaseEnum {
 - 消息持久化
 - 死信队列处理
 
+### 7. 分布式锁
+- Zookeeper 分布式锁实现
+- 支持可重入锁
+- 锁监控指标
+
 ### 6. 搜索引擎
 - Elasticsearch 集成
 - 全文搜索支持
@@ -314,4 +327,4 @@ java -jar eudon-service/target/eudon-service-1.0-SNAPSHOT.jar
 - 基础框架搭建
 - 核心功能实现
 - 示例代码完善
-- 分库分表依赖升级为shardingsphere-jdbc，适配Spring Boot 3.x 
+- 分库分表依赖升级为shardingsphere-jdbc，适配Spring Boot 3.x
