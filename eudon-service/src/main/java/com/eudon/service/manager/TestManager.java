@@ -41,8 +41,8 @@ public class TestManager {
         log.debug("查询结果：{}",one);
 
         try {
-//            String s = client.create().forPath("/eudon1");
-//            log.info("创建结果:{}",s);
+            String s = client.create().forPath("/eudon1");
+            log.info("创建结果:{}",s);
 //            client.setData().forPath("/eudon","eudon".getBytes());
 //            byte[] eudonDate = client.getData().forPath("/eudon");
 //            log.info("eudonData:{}",new String(eudonDate));
@@ -50,12 +50,12 @@ public class TestManager {
 //            log.info("/的子节点:{}",children);
 //            byte[] bytes = client.getData().forPath("/services/TemplateApplication");
 //            log.info("/service:{}",bytes);
-            CuratorZookeeperClient zookeeperClient = client.getZookeeperClient();
-            ZooKeeper zooKeeper = zookeeperClient.getZooKeeper();
-            client.delete().inBackground((var1,var2) -> {
-                log.info("curatorFramework:{}",var1);
-                log.info("curatorEvent:{}",var2);
-            }).forPath("/eudon");
+//            CuratorZookeeperClient zookeeperClient = client.getZookeeperClient();
+//            ZooKeeper zooKeeper = zookeeperClient.getZooKeeper();
+//            client.delete().inBackground((var1,var2) -> {
+//                log.info("curatorFramework:{}",var1);
+//                log.info("curatorEvent:{}",var2);
+//            }).forPath("/eudon");
 //            byte[] data = zooKeeper.getData("/", true, new Stat());
 //            log.info("zookeeper:{}",data);
         } catch (Exception e) {
