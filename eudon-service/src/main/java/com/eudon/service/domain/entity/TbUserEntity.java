@@ -8,7 +8,6 @@ import com.eudon.common.core.enums.Gender;
 import lombok.Data;
 
 import java.io.Serializable;
-import java.util.Objects;
 
 /**
  * @author eudon
@@ -21,7 +20,6 @@ import java.util.Objects;
 @Data
 @TableName("tb_user")
 public class TbUserEntity implements Serializable {
-
     /**
      *
      */
@@ -43,26 +41,8 @@ public class TbUserEntity implements Serializable {
      */
     private Long zoneVal;
 
+    @TableField(exist = false)
     private static final long serialVersionUID = 1L;
-    @Override
-    public boolean equals(Object o) {
-        if (o == null || getClass() != o.getClass()) return false;
-        TbUserEntity that = (TbUserEntity) o;
-        return Objects.equals(userId, that.userId) && Objects.equals(userName, that.userName) && gender == that.gender && Objects.equals(zoneVal, that.zoneVal);
-    }
 
-    @Override
-    public int hashCode() {
-        return Objects.hash(userId, userName, gender, zoneVal);
-    }
 
-    @Override
-    public String toString() {
-        return "TbUserEntity{" +
-                "userId='" + userId + '\'' +
-                ", userName='" + userName + '\'' +
-                ", gender=" + gender +
-                ", zoneVal=" + zoneVal +
-                '}';
-    }
 }

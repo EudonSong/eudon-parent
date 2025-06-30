@@ -19,6 +19,7 @@
         <module>eudon-common-log</module>
         <module>eudon-common-doc</module>
         <module>eudon-common-starter</module>
+        <module>eudon-common-zookeeper</module>
     </modules>
 
     <build>
