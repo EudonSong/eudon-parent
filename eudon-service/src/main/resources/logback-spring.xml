@@ -20,6 +20,7 @@
     <logger name="org.hibernate" level="WARN"/>
     <logger name="com.zaxxer.hikari" level="INFO"/>
     <logger name="org.apache.kafka" level="WARN"/>
+    <logger name="org.apache.zookeeper" level="INFO"/>
     <!-- 根日志配置 -->
     <root level="debug">
         <appender-ref ref="CONSOLE"/>
